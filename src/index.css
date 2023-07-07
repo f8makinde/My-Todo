@@ -20,7 +20,7 @@ html {
 body {
   font-size: 2.4rem;
   font-family: sans-serif;
-  color: #5a3e2b;
+  color: #5957D0;
   font-family: "Quicksand";
   font-weight: 500;
 }
@@ -45,14 +45,18 @@ h1 {
 }
 
 .add-form {
-  background-color: #e5771f;
+  background-color: #fff;
   padding: 2.8rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
 }
-
+@media only screen and (max-width: 600px) {
+  .add-form {
+   flex-direction: column;
+  }
+}
 h3 {
   margin-right: 1.6rem;
   font-size: 2.4rem;
@@ -70,6 +74,7 @@ input {
   font-weight: 700;
   font-size: 1.8rem;
   cursor: pointer;
+  outline: none;
 }
 
 .add-form button {
@@ -78,10 +83,9 @@ input {
 }
 
 .list {
-  background-color: #5a3e2b;
-  color: #ffebb3;
+  background-color: #5957D0;
+  color: #fff;
   padding: 4rem 0;
-
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -132,7 +136,8 @@ input[type="checkbox"] {
 }
 
 .stats {
-  background-color: #76c7ad;
+  background-color: #8173E8;
+  color: #fff;
   text-align: center;
   font-weight: 700;
   padding: 3.2rem 0;

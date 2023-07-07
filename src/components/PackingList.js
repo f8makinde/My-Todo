@@ -19,7 +19,9 @@ export const PackingList = ({ items, onDeleteItems, onToggle, onClearItem }) => 
         <option value='desc'>Sort by description</option>
         <option value='packed'>Sort by packed status</option>
       </select>
-      <button onClick={onClearItem}>Clear List</button>
+    
+          <button onClick={onClearItem}>Clear List</button>
+  
     </div>
   </div>;
 };
