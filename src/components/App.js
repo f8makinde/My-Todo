@@ -1,10 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form } from './Form'
 import { PackingList } from './PackingList'
 import { Stats } from './Stats'
 import { Logo } from './Logo'
+const getLocalStorage =() =>{
+  let items = localStorage.getItem('items')
+  if(items){
+    return JSON.parse(localStorage.getItem('items'))
+  }
+  else{
+    return []
+  }
+}
 const App = () => {
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState(getLocalStorage())
   function handleAddItems(item){
     setItems(items => [...items, item])
   }
@@ -18,6 +27,9 @@ const App = () => {
     const confirmed = window.confirm('Are you ready to delete all items')
    if(confirmed) setItems([])
   }
+  useEffect(()=>{
+    localStorage.setItem('items', JSON.stringify(items))
+  }, [items])
   return (
     <div className='app'>
       <Logo />
